@@ -13,7 +13,7 @@
   --brand-primary: #00274d;
   --brand-secondary: #00538a;
   --brand-light: #e8f1f7;
-  
+
   /* Accent colors */
   --accent-gold: #ffd24a;
   --accent-gold-hover: #ffc107;
@@ -41,7 +41,7 @@
   --brand-primary: #58a6ff;
   --brand-secondary: #79c0ff;
   --brand-light: rgba(88, 166, 255, 0.1);
-  
+
   --accent-gold: #ffd24a;
   --accent-gold-hover: #ffc107;
   --accent-gold-light: rgba(255, 210, 74, 0.1);
@@ -64,4 +64,23 @@ body {
   color: var(--text-primary);
   line-height: 1.6;
   padding-top: 60px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-secondary);
+  border-radius: 5px;
+  border: 2px solid var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
 }

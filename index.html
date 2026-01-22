@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +11,7 @@
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/home.css" />
 </head>
+
 <body>
 
   <!-- Header / Navbar -->
@@ -23,15 +25,28 @@
         </div>
       </div>
 
+      <button class="mobile-menu-btn" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
       <nav class="main-nav">
-        <a href="#home">Home</a>
-        <a href="#events">Events</a>
-        <a href="#facilities">Facilities</a>
-        <a href="#faq">FAQs</a>
-        <a href="#execome">Our Team</a>
-        <a href="#mentors">Mentors</a>
-        <a href="#contact">Contact</a>
-        <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">⚙️</button>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#events">Events</a>
+          <a href="#facilities">Facilities</a>
+          <a href="#faq">FAQs</a>
+          <a href="#execome">Our Team</a>
+          <a href="#mentors">Mentors</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="nav-actions">
+          <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+            <span class="theme-icon light-icon">☀️</span>
+            <span class="theme-icon dark-icon">🌙</span>
+          </button>
+        </div>
       </nav>
     </div>
   </header>
@@ -39,28 +54,32 @@
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1>Turning Ideas Into Reality</h1>
-      <a
-        href="https://forms.google.com/your-form-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-primary"
-      >
-        Submit Your Idea →
-      </a>
+      <h1 class="hero-title">IEDC<span class="highlight">MACE</span></h1>
+      <p class="hero-subtitle">Innovation & Entrepreneurship Development Centre</p>
+
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+        <div class="arrow-scroll">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Mission & Vision -->
   <section class="mission-vision">
-    <div class="card">
+    <div class="feature-card mission">
       <h2>Mission</h2>
       <p>
         To empower students with mentorship, resources, and opportunities
         to build impactful startups.
       </p>
     </div>
-    <div class="card">
+    <div class="feature-card vision">
       <h2>Vision</h2>
       <p>
         To be a leading student innovation hub shaping future entrepreneurs.
@@ -71,30 +90,31 @@
   <!-- Events Section -->
   <section id="events" class="events-section">
     <h2>Our Events</h2>
-    
+
     <div class="events-category">
       <h3>Upcoming Events</h3>
       <div class="events-grid">
         <div class="event-card" onclick="openEventPopup('tech-workshop')">
-          <div class="event-card-image">🔧</div>
+          <img src="assets/events/tech_workshop.png" alt="Tech Workshop" class="event-card-image" />
           <div class="event-card-content">
             <h4>Tech Workshop 2025</h4>
             <div class="event-card-date">2025-11-10</div>
             <p class="event-card-desc">A hands-on workshop on latest tech trends and innovations.</p>
           </div>
         </div>
-        
+
         <div class="event-card" onclick="openEventPopup('science-fest')">
-          <div class="event-card-image">🔬</div>
+          <img src="assets/events/science_fest.png" alt="Science Fest" class="event-card-image" />
           <div class="event-card-content">
             <h4>Annual Science Fest</h4>
             <div class="event-card-date">2025-12-05</div>
             <p class="event-card-desc">Celebrating innovation, research, and experiments by students.</p>
           </div>
         </div>
-        
+
         <div class="event-card" onclick="openEventPopup('entrepreneurship-webinar')">
-          <div class="event-card-image">💼</div>
+          <img src="assets/events/entrepreneurship_webinar.png" alt="Entrepreneurship Webinar"
+            class="event-card-image" />
           <div class="event-card-content">
             <h4>Entrepreneurship Webinar</h4>
             <div class="event-card-date">2025-11-25</div>
@@ -108,25 +128,25 @@
       <h3>Past Events</h3>
       <div class="events-grid">
         <div class="event-card" onclick="openEventPopup('robotics-workshop')">
-          <div class="event-card-image">🤖</div>
+          <img src="assets/events/robotics_workshop.png" alt="Robotics Workshop" class="event-card-image" />
           <div class="event-card-content">
             <h4>Robotics Workshop</h4>
             <div class="event-card-date">2025-12-15</div>
             <p class="event-card-desc">Hands-on robotics workshop for students interested in automation.</p>
           </div>
         </div>
-        
+
         <div class="event-card" onclick="openEventPopup('ai-ml-bootcamp')">
-          <div class="event-card-image">🤖</div>
+          <img src="assets/events/ai_ml_bootcamp.png" alt="AI & ML Bootcamp" class="event-card-image" />
           <div class="event-card-content">
             <h4>AI & ML Bootcamp</h4>
             <div class="event-card-date">2025-12-22</div>
             <p class="event-card-desc">Intensive bootcamp covering AI, ML, and data science basics.</p>
           </div>
         </div>
-        
+
         <div class="event-card" onclick="openEventPopup('green-tech-hackathon')">
-          <div class="event-card-image">🌱</div>
+          <img src="assets/events/green_tech_hackathon.png" alt="Green Tech Hackathon" class="event-card-image" />
           <div class="event-card-content">
             <h4>Green Tech Hackathon</h4>
             <div class="event-card-date">2025-11-30</div>
@@ -152,7 +172,7 @@
         </div>
       </div>
       <div class="facility">
-        <div class="facility-image"></div>
+        <img src="assets/facilities/ksum_support.png" alt="KSUM Support" class="facility-image" />
         <div class="facility-content">
           <h3>KSUM Support</h3>
           <p>
@@ -180,7 +200,7 @@
   <!-- Our Team / Execome Section -->
   <section id="execome" class="team-section">
     <h2>Meet Our Team</h2>
-    
+
     <div class="team-category">
       <h3>Core Team</h3>
       <div class="team-grid">
@@ -191,31 +211,31 @@
             <p class="team-card-role">CEO</p>
           </div>
         </div>
-        
+
         <div class="team-card">
-          <div class="team-card-image">👩‍💼</div>
+          <img src="assets/team/mariya.jpg" alt="Mariya" class="team-card-image">
           <div class="team-card-content">
             <h4>Mariya</h4>
             <p class="team-card-role">COO</p>
           </div>
         </div>
-        
+
         <div class="team-card">
-          <div class="team-card-image">👨‍💼</div>
+          <img src="assets/team/kevin.jpg" alt="Kevin" class="team-card-image">
           <div class="team-card-content">
             <h4>Kevin</h4>
             <p class="team-card-role">Secretary</p>
           </div>
         </div>
-        
+
         <div class="team-card">
-          <div class="team-card-image">💻</div>
+          <img src="assets/team/abhishek.jpg" alt="Abhishek" class="team-card-image">
           <div class="team-card-content">
             <h4>Abhishek</h4>
             <p class="team-card-role">CTO</p>
           </div>
         </div>
-        
+
         <div class="team-card">
           <div class="team-card-image">📊</div>
           <div class="team-card-content">
@@ -223,9 +243,9 @@
             <p class="team-card-role">CAO</p>
           </div>
         </div>
-        
+
         <div class="team-card">
-          <div class="team-card-image">💰</div>
+          <img src="assets/team/mariam.jpg" alt="Maria" class="team-card-image">
           <div class="team-card-content">
             <h4>Maria</h4>
             <p class="team-card-role">CFO</p>
@@ -236,35 +256,15 @@
 
     <div class="team-category">
       <h3>Extended Team</h3>
-      <div class="team-grid">
-        <div class="team-card">
-          <div class="team-card-image">📢</div>
-          <div class="team-card-content">
-            <h4>Neeraj</h4>
-            <p class="team-card-role">Marketing Co-Lead</p>
-          </div>
-        </div>
-        
-        <div class="team-card">
-          <div class="team-card-image">📢</div>
-          <div class="team-card-content">
-            <h4>Malavika</h4>
-            <p class="team-card-role">Marketing Co-Lead</p>
-          </div>
-        </div>
-        
-        <div class="team-card">
-          <div class="team-card-image">🎉</div>
-          <div class="team-card-content">
-            <h4>Adhil</h4>
-            <p class="team-card-role">Event Director</p>
-          </div>
-        </div>
+      <h3>Extended Team</h3>
+      <!-- Dynamic Extended Team Grid -->
+      <div id="extended-team-grid" class="team-grid">
+        <!-- Members will be loaded here by main.js -->
       </div>
     </div>
 
-    <div style="text-align: center;">
-      <button class="see-more-btn" onclick="alert('More team members coming soon!')">See More</button>
+    <div style="text-align: center; margin-top: 2rem;">
+      <button id="see-more-btn" class="see-more-btn">See More</button>
     </div>
   </section>
 
@@ -294,31 +294,13 @@
     </div>
   </footer>
 
-  <!-- Theme Selector Modal -->
-  <div id="themeModal" class="theme-modal">
-    <div class="theme-modal-content">
-      <button id="closeThemeModal" class="close-btn">&times;</button>
-      <h3>Settings</h3>
-      <div class="theme-selector">
-        <label for="themeLight" class="theme-option">
-          <input type="radio" id="themeLight" name="theme" value="light" checked />
-          <span class="theme-preview light"></span>
-          <span>Light Theme</span>
-        </label>
-        <label for="themeDark" class="theme-option">
-          <input type="radio" id="themeDark" name="theme" value="dark" />
-          <span class="theme-preview dark"></span>
-          <span>Dark Theme</span>
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="theme-modal-overlay" id="themeOverlay"></div>
+
 
   <!-- Event Popup Modal -->
   <div id="eventPopup" class="event-popup">
     <div class="event-popup-content">
       <button class="event-popup-close" onclick="closeEventPopup()">←</button>
+      <img id="eventImage" class="event-popup-image" src="" alt="Event Image">
       <h3 id="eventTitle">Event Title</h3>
       <p class="event-date" id="eventDate">Date</p>
       <p id="eventDescription">Event description goes here.</p>
@@ -326,6 +308,19 @@
     </div>
   </div>
 
+  <!-- Scroll-to-Top Button -->
+  <div class="progress-wrap" id="scrollTopBtn">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+    <div class="arrow-up">↑</div>
+  </div>
+
+  <!-- 3D Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.rings.min.js"></script>
+  <script src="js/teamData.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
