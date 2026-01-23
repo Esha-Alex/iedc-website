@@ -50,22 +50,22 @@ if (themeToggle) {
 // Event Popup Functionality
 const eventPopup = document.getElementById("eventPopup");
 const eventDatabase = {
-  "tech-workshop": {
-    image: "assets/events/tech_workshop.png",
-    title: "Tech Workshop 2025",
-    date: "2025-11-10",
-    description: "A hands-on workshop on latest tech trends and innovations.",
+  "xelerate-26": {
+    image: "assets/events/xeleratenew.jpeg",
+    title: "XELERATE'26",
+    date: "Coming Soon",
+    description: "XELERATE'26 — an upcoming startup acceleration program empowering students through mentorship, workshops, and networking.",
     details:
-      "Join us for an immersive workshop covering cutting-edge technology trends. Learn from industry experts about AI, Machine Learning, Cloud Computing, and Web Development. This workshop is open to all students and includes hands-on coding sessions, group discussions, and networking opportunities.",
+      "XELERATE'26 is the third edition of the startup support and acceleration program, following the successful execution of last year's edition. Designed to empower aspiring student entrepreneurs, the program will feature a series of hands-on workshops, mentorship sessions, and networking opportunities. Building on the impact of previous editions, XELERATE'26 aims to help students refine ideas, strengthen entrepreneurial skills, and develop scalable ventures.",
   },
-  "science-fest": {
+  "influencer-summit": {
     image: "assets/events/science_fest.png",
-    title: "Annual Science Fest",
-    date: "2025-12-05",
+    title: "Influencer Summit",
+    date: "Coming Soon",
     description:
-      "Celebrating innovation, research, and experiments by students.",
+      "Influencer Summit — a grand conclave bringing leading influencers together to inspire, engage, and empower students.",
     details:
-      "Our annual science festival celebrates student innovation and research. Participate in exciting demonstrations, poster presentations, and live experiments. Showcase your scientific projects and compete for exciting prizes. All students are welcome to participate or attend.",
+      "The Influencer Summit is a grand gathering that brings together renowned influencers from diverse domains to connect with the student community. Designed as an engaging and insightful experience, the summit offers students an opportunity to learn from real-world journeys, gain practical perspectives, and find inspiration beyond the classroom. By combining entertainment with meaningful discussions, the event aims to motivate students to think creatively, grow productively, and broaden their horizons.",
   },
   "entrepreneurship-webinar": {
     image: "assets/events/entrepreneurship_webinar.png",
@@ -76,39 +76,45 @@ const eventDatabase = {
     details:
       "Discover the secrets of successful entrepreneurship from seasoned founders and business leaders. This webinar covers business planning, funding strategies, marketing, and scaling your startup. Interactive Q&A session included. Perfect for aspiring entrepreneurs and startup enthusiasts.",
   },
-  "robotics-workshop": {
-    image: "assets/events/robotics_workshop.png",
-    title: "Robotics Workshop",
-    date: "2025-12-15",
+  "evoke": {
+    image: "assets/events/evoke.jpeg",
+    title: "EVOKE",
+    date: "02-08-2025",
     description:
-      "Hands-on robotics workshop for students interested in automation.",
+      "EVOKE — showcasing student innovation, by IEDC MACE × IoT MACE.",
     details:
-      "Learn robotics fundamentals with hands-on experience. Build and program robots, learn about automation, and understand robotics applications in industry. This workshop covers basics to advanced robotics concepts. All skill levels welcome.",
+      "EVOKE brings together innovative projects in a high-energy innovation showdown.The event features a competitive showdown with a ₹1 Lakh prize pool, celebrating creativity and execution.",
   },
-  "ai-ml-bootcamp": {
-    image: "assets/events/ai_ml_bootcamp.png",
-    title: "AI & ML Bootcamp",
-    date: "2025-12-22",
+  "hackify": {
+    image: "assets/events/hackify.jpeg",
+    title: "HACKIFY",
+    date: "28-02-2025",
     description:
-      "Intensive bootcamp covering AI, ML, and data science basics.",
+      "HACKIFY — a large-scale hackathon by IEDC MACE focused on solving real-world problems through innovation.",
     details:
-      "An intensive bootcamp for mastering Artificial Intelligence and Machine Learning. Learn Python, data preprocessing, supervised and unsupervised learning, neural networks, and practical ML applications. Daily hands-on coding exercises and projects included.",
+      "HACKIFY is the flagship hackathon of IEDC MACE, designed to identify ideas that solve real-world problems with strong industry relevance and future potential. Conducted from February 28 to March 2, the event challenged innovators to build unique, scalable solutions. The hackathon featured a competitive environment with a ₹70,000 prize pool, fostering creativity, collaboration, and impact-driven innovation.",
   },
-  "green-tech-hackathon": {
-    image: "assets/events/green_tech_hackathon.png",
-    title: "Green Tech Hackathon",
-    date: "2025-11-30",
+  "xelerate": {
+    image: "assets/events/xeleratepast.jpeg",
+    title: "XELERATE",
+    date: "31-10-2024",
     description:
-      "Hackathon focusing on sustainable and green technology solutions.",
+      "XELERATE — a flagship event by IEDC MACE, showcasing student innovation and entrepreneurship.",
     details:
-      "Join our green tech hackathon to develop innovative solutions for environmental sustainability. Build projects using IoT, renewable energy, waste management technologies, or other green tech innovations. Win prizes, network with like-minded innovators, and make a difference.",
+      "XELERATE'24 is an intensive startup support program conducted on 31st October 2024, aimed at empowering aspiring student entrepreneurs. The initiative featured a series of workshops, mentorship sessions, and networking opportunities designed to strengthen startup ideas and entrepreneurial skills. Through multiple focused programs, XELERATE'24 provided students with the guidance and exposure needed to transform ideas into viable ventures.",
   },
 };
 
 function openEventPopup(eventId) {
   const event = eventDatabase[eventId];
   if (event) {
-    document.getElementById("eventImage").src = event.image;
+    const eventImage = document.getElementById("eventImage");
+    if (event.image && event.image.trim() !== "") {
+      eventImage.src = event.image;
+      eventImage.style.display = "block";
+    } else {
+      eventImage.style.display = "none";
+    }
     document.getElementById("eventTitle").textContent = event.title;
     document.getElementById("eventDate").textContent = event.date;
     document.getElementById("eventDescription").textContent = event.description;
