@@ -32,6 +32,17 @@
   width: auto;
 }
 
+/* Improve IEDC logo visibility on light theme */
+[data-theme="light"] .brand-logo-iedc {
+  background: #000000;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+[data-theme="dark"] .brand-logo-iedc {
+  background: transparent;
+}
+
 .brand-text {
   display: flex;
   flex-direction: column;

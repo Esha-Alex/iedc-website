@@ -112,6 +112,13 @@
   animation: fadeInUp 1s ease-out 0.2s backwards;
 }
 
+/* Dark Theme Override for Hero Subtitle */
+[data-theme="dark"] .hero-subtitle {
+  color: #ffffff;
+  font-weight: 500;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, 0.9);
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -127,7 +134,7 @@
 /* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: 40px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -765,6 +772,66 @@ img.team-card-image {
   transform: translateY(-2px);
 }
 
+/* Mentors Section */
+.mentors-section {
+  max-width: 1200px;
+  margin: 5rem auto;
+  padding: 2rem;
+}
+
+.mentors-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+.mentors-grid {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.mentor-card {
+  background: var(--bg-surface);
+  border-radius: 16px;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  max-width: 320px;
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mentor-image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.mentor-info {
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--bg-primary);
+}
+
+.mentor-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  letter-spacing: 1px;
+}
+
+.mentor-role {
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+}
+
 /* Scroll-to-Top Button */
 .progress-wrap {
   position: fixed;
@@ -829,8 +896,15 @@ img.team-card-image {
   box-shadow: 0 4px 15px var(--shadow-light);
 }
 
+/* Ensure anchored scroll accounts for fixed header */
+#execome,
+#mentors {
+  scroll-margin-top: 80px;
+}
+
 /* Responsive Styles for Recent Changes */
 @media (max-width: 768px) {
+
   /* FAQ Section Responsive */
   .faq {
     padding: 1.5rem 1rem;
@@ -925,9 +999,37 @@ img.team-card-image {
   .event-card-desc {
     font-size: 0.9rem;
   }
+
+  /* Mentors Section Responsive */
+  .mentors-section {
+    padding: 1.5rem 1rem;
+    margin: 3rem auto;
+  }
+
+  .mentors-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .mentors-grid {
+    gap: 2rem;
+  }
+
+  .mentor-image {
+    height: 260px;
+  }
+
+  .mentor-name {
+    font-size: 1.2rem;
+  }
+
+  .mentor-role {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
+
   /* Extra Small Devices */
   .faq h2 {
     font-size: 1.75rem;
@@ -975,5 +1077,28 @@ img.team-card-image {
 
   .event-card-content {
     padding: 1rem;
+  }
+
+  /* Mentors Section Extra Small */
+  .mentors-section {
+    padding: 1.25rem 1rem;
+    margin: 2.5rem auto;
+  }
+
+  .mentors-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .mentor-image {
+    height: 220px;
+  }
+
+  .mentor-name {
+    font-size: 1.15rem;
+  }
+
+  .mentor-role {
+    font-size: 0.85rem;
   }
 }
