@@ -363,14 +363,15 @@
 }
 
 .footer-section h3 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
 
 .footer-section p {
   margin-bottom: 0.8rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 1.05rem;
 }
 
 .footer-section a {
@@ -411,7 +412,12 @@
 .social-links svg {
   width: 18px;
   height: 18px;
-  fill: currentColor;
+  fill: #ffffff;
+}
+
+/* Dark theme footer - lighter background */
+[data-theme="dark"] .site-footer {
+  background: #1e3a5f;
 }
 
 .footer-bottom {

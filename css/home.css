@@ -1152,8 +1152,16 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Extended team - 3 columns in a single row */
+#extended-team-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
 }
 
 .team-card {

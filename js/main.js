@@ -141,6 +141,15 @@ if (eventPopup) {
 // Initialize theme on page load
 initializeTheme();
 
+// Force scroll to top on page load/refresh
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+window.scrollTo(0, 0);
+
 // Vanta.js Effect Handling
 let vantaEffect = null;
 
