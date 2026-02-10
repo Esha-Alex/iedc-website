@@ -447,22 +447,8 @@
   line-height: 1.15;
   margin-bottom: 2rem;
   color: var(--text-primary);
-  text-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.2);
   letter-spacing: -1px;
-  animation: titlePulse 3s ease-in-out infinite;
   text-align: center;
-}
-
-@keyframes titlePulse {
-
-  0%,
-  100% {
-    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(59, 130, 246, 0.3);
-  }
-
-  50% {
-    text-shadow: 0 0 30px rgba(59, 130, 246, 0.7), 0 0 60px rgba(59, 130, 246, 0.5);
-  }
 }
 
 .highlight-text {
@@ -470,15 +456,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  background-size: 200% auto;
-  animation: shimmer 4s linear infinite;
-  filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.6));
-}
-
-@keyframes shimmer {
-  to {
-    background-position: 200% center;
-  }
 }
 
 .description {

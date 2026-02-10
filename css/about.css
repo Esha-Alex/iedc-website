@@ -37,12 +37,13 @@
 }
 
 .about-heading {
-  text-align: center;
-  font-size: 2.3rem;
-  letter-spacing: 0.12em;
+  text-align: left;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   color: var(--brand-primary);
+  font-weight: 800;
 }
 
 .about-subheading {
@@ -53,9 +54,10 @@
 }
 
 .about-text {
-  line-height: 1.7;
-  margin-bottom: 1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
   color: var(--text-secondary);
+  font-size: 1.15rem;
 }
 
 @media (max-width: 900px) {
@@ -109,7 +111,7 @@
 .pillar-card p {
   line-height: 1.7;
   color: var(--text-secondary);
-  font-size: 0.98rem;
+  font-size: 1.05rem;
 }
 
 .pillar-card:hover {
