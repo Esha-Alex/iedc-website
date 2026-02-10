@@ -6,8 +6,8 @@ window.teamData = [
     { id: 2, name: "Mariya", position: "COO", photo: "assets/team/mariya.jpg", team: "Core Team" },
     { id: 3, name: "Kevin", position: "Secretary", photo: "assets/team/kevin.jpg", team: "Core Team" },
     { id: 4, name: "Abhishek", position: "CTO", photo: "assets/team/abhishek.jpg", team: "Core Team" },
-    { id: 5, name: "Anirudh", position: "CAO", photo: "assets/team/anirudh.jpg", team: "Core Team" },
-    { id: 6, name: "Maria", position: "CFO", photo: "assets/team/Maria Roselind.jpg", team: "Core Team" },
+    { id: 5, name: "Anirudh", position: "CAO", photo: "assets/team/Anirudh.jpg", team: "Core Team" },
+    { id: 6, name: "Maria", position: "CFO", photo: "assets/team/Maria Roselind.jpeg", team: "Core Team" },
     { id: 7, name: "Dheeraj", position: "Marketing Co-Lead", photo: "assets/team/Dheeraj.jpeg", team: "Core Team" },
     { id: 8, name: "Malavika", position: "Marketing Co-Lead", photo: "assets/team/Malavika.jpeg", team: "Core Team" },
     { id: 9, name: "Adhil", position: "Event Director", photo: "assets/team/Adhil Rasheed Director event.jpg", team: "Core Team" },
@@ -37,7 +37,7 @@ window.teamData = [
          SPONSORSHIP & STARTUP
     ============================ */
     { id: 19, name: "Savio", position: "Marketing", photo: "assets/team/Savio Saj.jpg", team: "Sponsorship & Startup" },
-    { id: 20, name: "Samil", position: "Marketing Co-Lead", photo: "assets/team/samil.jpg", team: "Sponsorship & Startup" },
+    { id: 20, name: "Samil", position: "Marketing Co-Lead", photo: "assets/team/Samil Mehaboob - Marketing Co-lead .jpg", team: "Sponsorship & Startup" },
     { id: 21, name: "Jeevan", position: "Sponsorship", photo: "assets/team/Jeevan.JPEG", team: "Sponsorship & Startup" },
     { id: 22, name: "Shan", position: "Startup Team", photo: "assets/team/SHAN AHAMMED BABU PT (STARTUP TEAM).jpg", team: "Sponsorship & Startup" },
     { id: 23, name: "Anzal", position: "Startup Team", photo: "assets/team/anzal.jpg", team: "Sponsorship & Startup" },
@@ -55,7 +55,7 @@ window.teamData = [
     { id: 26, name: "Ashika", position: "Design Team", photo: "assets/team/ashika.jpg", team: "Design Team" },
     { id: 27, name: "Naseef", position: "Design Team", photo: "assets/team/Naseef Mohamme Nizamudeen.jpg", team: "Design Team" },
     { id: 28, name: "Aayesh", position: "Design Team", photo: "assets/team/Aayesh.jpeg", team: "Design Team" },
-    { id: 29, name: "Anagha", position: "Design Team", photo: "assets/team/amogha.jpg", team: "Design Team" },
+    { id: 29, name: "Anagha", position: "Design Team", photo: "assets/team/Anagha K R- Design.png", team: "Design Team" },
 
     // Doc Team
     { id: 30, name: "Shilpa", position: "Doc Lead", photo: "assets/team/shilpa nair-doc lead.jpg", team: "Design & Doc" },
@@ -63,7 +63,7 @@ window.teamData = [
     { id: 32, name: "Navin", position: "Doc Team", photo: "assets/team/Navin Ratnakumar-doc.png", team: "Doc Team" },
     { id: 33, name: "Hannah", position: "Doc Team", photo: "assets/team/hannah.jpg", team: "Doc Team" },
     
-    { id: 34, name: "Samuel", position: "Doc Team", photo: "assets/team/samuel.jpg", team: "Doc Team" },
+    { id: 34, name: "Samuel", position: "Doc Team", photo: "assets/team/Samuel M Dileep ( Doc) .jpg", team: "Doc Team" },
     { id: 35, name: "Nidhi", position: "Doc Team", photo: "assets/team/nidhi.jpg", team: "Doc Team" },
 
     /* ============================
@@ -75,13 +75,13 @@ window.teamData = [
     { id: 38, name: "Ayush", position: "Web Lead", photo: "assets/team/Aayush.jpeg", team: "Web Team" },
 
     { id: 39, name: "Hari", position: "Media Team", photo: "assets/team/Hari krishnan -Media.jpg", team: "Media Team" },
-    { id: 40, name: "Ayisha", position: "Media Team", photo: "assets/team/hiba.jpeg", team: "Media Team" },
-    { id: 41, name: "Rohith", position: "Media Team", photo: "assets/team/rohith.jpg", team: "Media Team" },
+    { id: 40, name: "Ayisha", position: "Media Team", photo: "assets/team/Ayisha Hiba K T - Media.jpg", team: "Media Team" },
+    { id: 41, name: "Rohith", position: "Media Team", photo: "assets/team/Rohithmedia.jpeg", team: "Media Team" },
     { id: 42, name: "Alfred", position: "Media Team", photo: "assets/team/alfred.jpg", team: "Media Team" },
     { id: 43, name: "Anisa", position: "Media Team", photo: "assets/team/anisa.jpg", team: "Media Team" },
 
     // Web
-    { id: 44, name: "Nayana", position: "Web Team", photo: "assets/team/nayana.jpg", team: "Web Team" },
+    { id: 44, name: "Nayana", position: "Web Team", photo: "assets/team/nayana.jpeg", team: "Web Team" },
     { id: 45, name: "Aparna", position: "Web Team", photo: "assets/team/Aparna Suresh_web.jpg", team: "Web Team" },
     { id: 46, name: "Esha", position: "Web Team", photo: "assets/team/esha.jpg", team: "Web Team" },
 

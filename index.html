@@ -280,36 +280,81 @@
 
     <div class="events-category">
       <h3>Past Events</h3>
-      <div class="events-grid">
-        <div class="event-card" onclick="openEventPopup('evoke')">
-          <img src="assets/events/evoke.jpeg" alt="EVOKE" class="event-card-image" />
-          <div class="event-card-content">
-            <h4>EVOKE</h4>
-            <div class="event-card-date">02-08-2025</div>
-            <p class="event-card-desc">EVOKE — showcasing student innovation, by IEDC MACE × IoT MACE.</p>
+      <div class="events-scroll-container">
+        <button id="past-events-left-btn" class="events-scroll-btn events-scroll-left" onclick="scrollEvents('left')" aria-label="Scroll left">
+          ←
+        </button>
+        <div class="events-grid events-grid-scrollable" id="past-events-grid">
+          <div class="event-card" onclick="openEventPopup('macekart')">
+            <img src="assets/events/Macekart.jpg" alt="MaceKart" class="event-card-image" />
+            <div class="event-card-content">
+              <h4>MaceKart</h4>
+              <div class="event-card-date">26-27 Sep 2025</div>
+              <p class="event-card-desc">MACEKART — a vibrant marketplace event conducted as part of Takshak'25 in collaboration with IEDC MACE.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="event-card" onclick="openEventPopup('hackify')">
-          <img src="assets/events/hackify.jpeg" alt="HACKIFY" class="event-card-image" />
-          <div class="event-card-content">
-            <h4>HACKIFY</h4>
-            <div class="event-card-date">28-02-2025</div>
-            <p class="event-card-desc">HACKIFY — a large-scale hackathon by IEDC MACE focused on solving real-world
-              problems through innovation.</p>
+          <div class="event-card" onclick="openEventPopup('marketing-101')">
+            <img src="assets/events/Macekart.jpg" alt="Marketing 101" class="event-card-image" />
+            <div class="event-card-content">
+              <h4>Marketing 101</h4>
+              <div class="event-card-date">27 Sep 2025</div>
+              <p class="event-card-desc">Marketing 101 — an interactive learning session introducing students to marketing, branding, and business growth strategies.</p>
+            </div>
           </div>
-        </div>
 
-        <div class="event-card" onclick="openEventPopup('xelerate')">
-          <img src="assets/events/xeleratepast.jpeg" alt="XELERATE" class="event-card-image" />
-          <div class="event-card-content">
-            <h4>XELERATE</h4>
-            <div class="event-card-date">31-10-2024</div>
-            <p class="event-card-desc">
-              XELERATE — a flagship event by IEDC MACE, showcasing student innovation and entrepreneurship.
-            </p>
+          <div class="event-card" onclick="openEventPopup('techbiz-2')">
+            <img src="assets/events/Macekart.jpg" alt="TECHBIZ 2.0" class="event-card-image" />
+            <div class="event-card-content">
+              <h4>TECHBIZ 2.0</h4>
+              <div class="event-card-date">28 Sep 2024</div>
+              <p class="event-card-desc">TECHBIZ 2.0 — a flagship competition testing technical knowledge and business decision-making skills.</p>
+            </div>
+          </div>
+
+          <div class="event-card" onclick="openEventPopup('tech-traverse')">
+            <img src="assets/events/Macekart.jpg" alt="Tech Traverse" class="event-card-image" />
+            <div class="event-card-content">
+              <h4>Tech Traverse</h4>
+              <div class="event-card-date">26-27 Sep 2025</div>
+              <p class="event-card-desc">Tech Traverse — a Startup and Project Expo jointly organized by IEDC and IIC MACE as part of Takshak'25.</p>
+            </div>
+          </div>
+
+          <div class="event-card" onclick="openEventPopup('evoke')">
+            <img src="assets/events/evoke.jpeg" alt="EVOKE" class="event-card-image" />
+            <div class="event-card-content">
+              <h4>EVOKE</h4>
+              <div class="event-card-date">02-08-2025</div>
+              <p class="event-card-desc">EVOKE — showcasing student innovation, by IEDC MACE × IoT MACE.</p>
+            </div>
+          </div>
+
+          <div class="event-card" onclick="openEventPopup('hackify')">
+            <img src="assets/events/hackify.jpeg" alt="HACKIFY" class="event-card-image" />
+            <div class="event-card-content">
+              <h4>HACKIFY</h4>
+              <div class="event-card-date">28-02-2025</div>
+              <p class="event-card-desc">HACKIFY — a large-scale hackathon by IEDC MACE focused on solving real-world
+                problems through innovation.</p>
+            </div>
+          </div>
+
+          <div class="event-card" onclick="openEventPopup('xelerate')">
+            <img src="assets/events/xeleratepast.jpeg" alt="XELERATE" class="event-card-image" />
+            <div class="event-card-content">
+              <h4>XELERATE</h4>
+              <div class="event-card-date">31-10-2024</div>
+              <p class="event-card-desc">
+                XELERATE — a flagship event by IEDC MACE, showcasing student innovation and entrepreneurship.
+              </p>
+            </div>
           </div>
         </div>
+        <button id="past-events-right-btn" class="events-scroll-btn events-scroll-right" onclick="scrollEvents('right')" aria-label="Scroll right">
+          →
+        </button>
+      </div>
   </section>
 
   <!-- Facilities -->
@@ -317,7 +362,7 @@
     <h2>Our Facilities</h2>
     <div class="facilities-grid">
       <div class="facility">
-        <div class="facility-image"></div>
+        <img src="assets/facilities/TBI room.jpeg" alt="TBI Room" class="facility-image" />
         <div class="facility-content">
           <h3>TBI Room</h3>
           <p>
@@ -407,6 +452,38 @@
           <div class="team-card-content">
             <h4>Anirudh</h4>
             <p class="team-card-role">CAO</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <img src="assets/team/Maria Roselind.jpeg" alt="Maria" class="team-card-image">
+          <div class="team-card-content">
+            <h4>Maria</h4>
+            <p class="team-card-role">CFO</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <img src="assets/team/Dheeraj.jpeg" alt="Dheeraj" class="team-card-image">
+          <div class="team-card-content">
+            <h4>Dheeraj</h4>
+            <p class="team-card-role">Marketing Co-Lead</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <img src="assets/team/Malavika.jpeg" alt="Malavika" class="team-card-image">
+          <div class="team-card-content">
+            <h4>Malavika</h4>
+            <p class="team-card-role">Marketing Co-Lead</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <img src="assets/team/Adhil Rasheed Director event.jpg" alt="Adhil" class="team-card-image">
+          <div class="team-card-content">
+            <h4>Adhil</h4>
+            <p class="team-card-role">Event Director</p>
           </div>
         </div>
 

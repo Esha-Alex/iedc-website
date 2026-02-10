@@ -103,6 +103,56 @@ const eventDatabase = {
     details:
       "XELERATE'24 is an intensive startup support program conducted on 31st October 2024, aimed at empowering aspiring student entrepreneurs. The initiative featured a series of workshops, mentorship sessions, and networking opportunities designed to strengthen startup ideas and entrepreneurial skills. Through multiple focused programs, XELERATE'24 provided students with the guidance and exposure needed to transform ideas into viable ventures.",
   },
+  "macekart": {
+    image: "assets/events/Macekart.jpg",
+    title: "MaceKart",
+    date: "26th & 27th September 2025",
+    time: "9:00 AM – 4:00 PM",
+    description:
+      "MACEKART — a vibrant marketplace event conducted as part of Takshak'25 in collaboration with IEDC MACE.",
+    details:
+      "MACEKART was a vibrant and engaging marketplace event conducted as part of Takshak'25 in collaboration with IEDC MACE. The event provided a platform for students to set up stalls and showcase their creativity through food, products, games, and innovative ideas. It transformed the campus into a lively entrepreneurial space where participants experienced real-time selling, customer interaction, and money management. MACEKART encouraged creativity, teamwork, and practical business exposure, allowing students to understand the dynamics of running a stall, promoting products, and engaging customers effectively.",
+  },
+  "marketing-101": {
+    image: "assets/events/Macekart.jpg",
+    title: "Marketing 101",
+    date: "27th September 2025",
+    time: "1:30 PM – 3:00 PM",
+    venue: "MCA Seminar Hall",
+    activityPoints: "Up to 25 KTU points",
+    description:
+      "Marketing 101 — an interactive learning session introducing students to marketing, branding, and business growth strategies.",
+    details:
+      "Marketing 101 was an interactive learning session organized by IEDC MACE in collaboration with CUSTOMIST, aimed at introducing students to the fundamentals of marketing, branding, and business growth strategies. The session covered real-world marketing concepts, practical approaches to selling ideas, and how startups position themselves in competitive markets. Participants gained insights into modern marketing trends, customer behavior, and strategic thinking directly from industry-oriented discussions. The event helped students build a strong foundation in marketing, improved their business awareness, and equipped them with skills useful for startups, internships, and entrepreneurial ventures.",
+  },
+  "techbiz-2": {
+    image: "assets/events/Macekart.jpg",
+    title: "TECHBIZ 2.0",
+    date: "28th September 2024",
+    time: "9:00 AM – 4:00 PM",
+    venue: "IEDC Room (MPV Block)",
+    prizePool: "₹15,000",
+    activityPoints: "Up to 40 KTU points",
+    registration: "Free",
+    description:
+      "TECHBIZ 2.0 — a flagship competition testing technical knowledge and business decision-making skills.",
+    details:
+      "TECHBIZ 2.0 was a flagship competition organized by IEDC MACE in association with Takshak'24, designed to test participants' technical knowledge and business decision-making skills. The event focused on problem-solving, innovation, and strategic thinking by blending technology with business concepts. Participants worked on real-world scenarios, analyzed challenges, and proposed innovative solutions. The competition enhanced critical thinking, teamwork, and entrepreneurial mindset among students, making it a valuable learning experience for aspiring technologists and entrepreneurs.",
+  },
+  "tech-traverse": {
+    image: "assets/events/Macekart.jpg",
+    title: "Tech Traverse – Startup & Project Expo",
+    date: "26th & 27th September 2025",
+    time: "From 1:30 PM onwards",
+    venue: "IEDC TBI Room",
+    registration: "Free",
+    prizePool: "₹22,000",
+    activityPoints: "Up to 35 KTU points",
+    description:
+      "Tech Traverse — a Startup and Project Expo jointly organized by IEDC and IIC MACE as part of Takshak'25.",
+    details:
+      "Tech Traverse was a Startup and Project Expo jointly organized by IEDC and IIC MACE as part of Takshak'25. The event provided a platform for students to exhibit innovative projects, startup ideas, and technical solutions to real-world problems. Participants showcased their work to peers, mentors, and evaluators, gaining valuable feedback and exposure. The expo fostered innovation, encouraged interdisciplinary collaboration, and helped students build confidence in presenting ideas. It also promoted a startup culture within the campus by motivating students to think beyond academics and explore entrepreneurship.",
+  },
 };
 
 function openEventPopup(eventId) {
@@ -116,9 +166,18 @@ function openEventPopup(eventId) {
       eventImage.style.display = "none";
     }
     document.getElementById("eventTitle").textContent = event.title;
-    document.getElementById("eventDate").textContent = event.date;
+    
+    // Build date string with optional time, venue, etc.
+    let dateText = `📅 Date: ${event.date}`;
+    if (event.time) dateText += `\n⏰ Time: ${event.time}`;
+    if (event.venue) dateText += `\n📍 Venue: ${event.venue}`;
+    if (event.prizePool) dateText += `\n💰 Prize Pool: ${event.prizePool}`;
+    if (event.activityPoints) dateText += `\n🎯 Activity Points: ${event.activityPoints}`;
+    if (event.registration) dateText += `\n📝 Registration: ${event.registration}`;
+    
+    document.getElementById("eventDate").textContent = dateText;
     document.getElementById("eventDescription").textContent = event.description;
-    document.getElementById("eventDetails").textContent = event.details;
+    document.getElementById("eventDetails").textContent = "About the Event:\n" + event.details;
     eventPopup.classList.add("active");
     document.body.style.overflow = "hidden";
   }
@@ -127,6 +186,40 @@ function openEventPopup(eventId) {
 function closeEventPopup() {
   eventPopup.classList.remove("active");
   document.body.style.overflow = "auto";
+}
+
+/* ============================
+   Past Events Horizontal Scroll
+============================ */
+function updatePastEventsArrows() {
+  const grid = document.getElementById("past-events-grid");
+  const leftBtn = document.getElementById("past-events-left-btn");
+  const rightBtn = document.getElementById("past-events-right-btn");
+  if (!grid || !leftBtn || !rightBtn) return;
+
+  const maxScrollLeft = grid.scrollWidth - grid.clientWidth;
+  const atStart = grid.scrollLeft <= 2;
+  const atEnd = grid.scrollLeft >= maxScrollLeft - 2;
+
+  // Hide when not needed, show once scrolling is possible
+  leftBtn.style.visibility = atStart ? "hidden" : "visible";
+  rightBtn.style.visibility = atEnd ? "hidden" : "visible";
+}
+
+function scrollEvents(direction) {
+  const grid = document.getElementById("past-events-grid");
+  if (!grid) return;
+
+  const firstCard = grid.querySelector(".event-card");
+  const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 320;
+  const gap = 32; // matches CSS gap: 2rem
+  const scrollAmount = Math.round(cardWidth + gap);
+
+  const currentScroll = grid.scrollLeft;
+  const newScroll = direction === "left" ? currentScroll - scrollAmount : currentScroll + scrollAmount;
+
+  grid.scrollTo({ left: newScroll, behavior: "smooth" });
+  setTimeout(updatePastEventsArrows, 350);
 }
 
 // Close popup when clicking on background
@@ -140,6 +233,31 @@ if (eventPopup) {
 
 // Initialize theme on page load
 initializeTheme();
+
+// Past events: arrow visibility + wheel-to-horizontal scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const grid = document.getElementById("past-events-grid");
+  if (!grid) return;
+
+  updatePastEventsArrows();
+
+  grid.addEventListener("scroll", () => {
+    updatePastEventsArrows();
+  });
+
+  // Use mouse wheel (down scroll) to scroll horizontally through cards
+  grid.addEventListener(
+    "wheel",
+    (e) => {
+      const isMostlyVertical = Math.abs(e.deltaY) > Math.abs(e.deltaX);
+      if (!isMostlyVertical) return;
+
+      e.preventDefault();
+      grid.scrollBy({ left: e.deltaY, behavior: "auto" });
+    },
+    { passive: false }
+  );
+});
 
 // Vanta.js Effect Handling
 let vantaEffect = null;
@@ -268,11 +386,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const seeMoreBtn = document.getElementById("see-more-btn");
 
   if (teamGrid && window.teamData) {
-    // Explanation: The first 6 members (Christy to Maria) are hardcoded in index.html as "Core Team".
-    // We start rendering dynamic members from Index 6 (Neeraj) onwards.
-    const dynamicMembers = window.teamData.slice(6);
+    // The Core Team cards are hardcoded in index.html.
+    // Keep Extended Team dynamic by filtering out those Core IDs.
+    const CORE_TEAM_IDS_RENDERED_IN_HTML = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    const dynamicMembers = window.teamData.filter(m => !CORE_TEAM_IDS_RENDERED_IN_HTML.has(m.id));
 
-    const INITIAL_SHOW_COUNT = 3; // Show Neeraj, Malavika, Adhil initially
+    const INITIAL_SHOW_COUNT = 6; // Show 2 rows (6 cards) initially
     let isExpanded = false;
 
     // Render Function
@@ -292,7 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Simple heuristic: if photo path is basically empty or placeholder, show emoji.
         // But here we set paths in teamData.js. We assume they exist.
         // We add an error handler to revert to emoji if image fails.
-        imageHTML = `<img src="${member.photo}" alt="${member.name}" class="${imgClass}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'team-card-image placeholder\\'>👤</div>'">`;
+        imageHTML = `<img src="${member.photo}" alt="${member.name}" class="${imgClass}" data-member-id="${member.id}" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'team-card-image placeholder\\'>👤</div>'">`;
 
         card.innerHTML = `
           ${imageHTML}
