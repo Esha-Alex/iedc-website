@@ -234,6 +234,7 @@ if (eventPopup) {
 // Initialize theme on page load
 initializeTheme();
 
+<<<<<<< HEAD
 // Past events: arrow visibility + wheel-to-horizontal scroll
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("past-events-grid");
@@ -258,6 +259,16 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: false }
   );
 });
+=======
+// Force scroll to top on page load/refresh
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+window.scrollTo(0, 0);
+>>>>>>> e82946bdb25573058febd96aaed23579c862b2a6
 
 // Vanta.js Effect Handling
 let vantaEffect = null;

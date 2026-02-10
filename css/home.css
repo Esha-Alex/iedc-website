@@ -1254,9 +1254,22 @@
 
 .team-grid {
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
   align-items: stretch;
+=======
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Extended team - 3 columns in a single row */
+#extended-team-grid {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+>>>>>>> e82946bdb25573058febd96aaed23579c862b2a6
 }
 
 .team-card {
