@@ -28,7 +28,7 @@ const html = document.documentElement;
 
 // Initialize theme from localStorage or default to light
 function initializeTheme() {
-  const savedTheme = localStorage.getItem("theme") || "light";
+  const savedTheme = localStorage.getItem("theme") || "dark";
   setTheme(savedTheme);
 }
 
@@ -307,7 +307,7 @@ function setVanta(theme) {
         scaleMobile: 1.0,
         backgroundColor: 0x0d1117,
         color: 0xffd24a,
-        xOffset: -0.25
+        xOffset: 0.4
       });
     }
   }
