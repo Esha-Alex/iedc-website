@@ -1754,6 +1754,18 @@ img.team-card-image[src*="Amal Narayan -pc"] {
   .mentor-role {
     font-size: 0.9rem;
   }
+
+  /* Force visibility for animated sections on mobile to prevent hidden content */
+  .mission-vision,
+  .events-section,
+  .facilities,
+  .faq,
+  .team-section,
+  .mentors-section {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 @media (max-width: 480px) {

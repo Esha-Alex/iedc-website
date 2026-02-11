@@ -11,9 +11,17 @@
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/home.css" />
   <link rel="stylesheet" href="css/about.css" />
+  <link rel="icon" href="assets/logo.png" type="image/x-icon">
 </head>
 
 <body>
+
+  <!-- Preloader -->
+  <div id="loader-wrapper">
+    <div class="loader-content">
+      <img src="assets/logo.png" alt="IEDC Loader" class="loader-logo">
+    </div>
+  </div>
 
   <!-- Header / Navbar -->
   <header class="site-header">
@@ -26,6 +34,12 @@
           <span>innovate | ideate | create</span>
         </div>
       </div>
+
+      <!-- Mobile Theme Toggle (Visible only on mobile) -->
+      <button id="themeToggleMobile" class="theme-btn mobile-theme-btn" aria-label="Toggle theme">
+        <span class="theme-icon light-icon">☀️</span>
+        <span class="theme-icon dark-icon">🌙</span>
+      </button>
 
       <button class="mobile-menu-btn" aria-label="Toggle navigation">
         <span class="bar"></span>
@@ -45,7 +59,7 @@
           <a href="#contact">Contact</a>
         </div>
         <div class="nav-actions">
-          <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">
+          <button id="themeToggle" class="theme-btn desktop-theme-btn" aria-label="Toggle theme">
             <span class="theme-icon light-icon">☀️</span>
             <span class="theme-icon dark-icon">🌙</span>
           </button>
@@ -281,7 +295,8 @@
     <div class="events-category">
       <h3>Past Events</h3>
       <div class="events-scroll-container">
-        <button id="past-events-left-btn" class="events-scroll-btn events-scroll-left" onclick="scrollEvents('left')" aria-label="Scroll left">
+        <button id="past-events-left-btn" class="events-scroll-btn events-scroll-left" onclick="scrollEvents('left')"
+          aria-label="Scroll left">
           ←
         </button>
         <div class="events-grid events-grid-scrollable" id="past-events-grid">
@@ -290,34 +305,38 @@
             <div class="event-card-content">
               <h4>MaceKart</h4>
               <div class="event-card-date">26-27 Sep 2025</div>
-              <p class="event-card-desc">MACEKART — a vibrant marketplace event conducted as part of Takshak'25 in collaboration with IEDC MACE.</p>
+              <p class="event-card-desc">MACEKART — a vibrant marketplace event conducted as part of Takshak'25 in
+                collaboration with IEDC MACE.</p>
             </div>
           </div>
 
           <div class="event-card" onclick="openEventPopup('marketing-101')">
-            <img src="assets/events/Macekart.jpg" alt="Marketing 101" class="event-card-image" />
+            <img src="assets/events/marketing_101.png" alt="Marketing 101" class="event-card-image" />
             <div class="event-card-content">
               <h4>Marketing 101</h4>
               <div class="event-card-date">27 Sep 2025</div>
-              <p class="event-card-desc">Marketing 101 — an interactive learning session introducing students to marketing, branding, and business growth strategies.</p>
+              <p class="event-card-desc">Marketing 101 — an interactive learning session introducing students to
+                marketing, branding, and business growth strategies.</p>
             </div>
           </div>
 
           <div class="event-card" onclick="openEventPopup('techbiz-2')">
-            <img src="assets/events/Macekart.jpg" alt="TECHBIZ 2.0" class="event-card-image" />
+            <img src="assets/events/techbiz_2.png" alt="TECHBIZ 2.0" class="event-card-image" />
             <div class="event-card-content">
               <h4>TECHBIZ 2.0</h4>
               <div class="event-card-date">28 Sep 2024</div>
-              <p class="event-card-desc">TECHBIZ 2.0 — a flagship competition testing technical knowledge and business decision-making skills.</p>
+              <p class="event-card-desc">TECHBIZ 2.0 — a flagship competition testing technical knowledge and business
+                decision-making skills.</p>
             </div>
           </div>
 
           <div class="event-card" onclick="openEventPopup('tech-traverse')">
-            <img src="assets/events/Macekart.jpg" alt="Tech Traverse" class="event-card-image" />
+            <img src="assets/events/tech_traverse.png" alt="Tech Traverse" class="event-card-image" />
             <div class="event-card-content">
               <h4>Tech Traverse</h4>
               <div class="event-card-date">26-27 Sep 2025</div>
-              <p class="event-card-desc">Tech Traverse — a Startup and Project Expo jointly organized by IEDC and IIC MACE as part of Takshak'25.</p>
+              <p class="event-card-desc">Tech Traverse — a Startup and Project Expo jointly organized by IEDC and IIC
+                MACE as part of Takshak'25.</p>
             </div>
           </div>
 
@@ -351,7 +370,8 @@
             </div>
           </div>
         </div>
-        <button id="past-events-right-btn" class="events-scroll-btn events-scroll-right" onclick="scrollEvents('right')" aria-label="Scroll right">
+        <button id="past-events-right-btn" class="events-scroll-btn events-scroll-right" onclick="scrollEvents('right')"
+          aria-label="Scroll right">
           →
         </button>
       </div>
@@ -362,7 +382,7 @@
     <h2>Our Facilities</h2>
     <div class="facilities-grid">
       <div class="facility">
-        <img src="assets/facilities/TBI room.jpeg" alt="TBI Room" class="facility-image" />
+        <img src="assets/facilities/tbi-room.jpeg" alt="TBI Room" class="facility-image" />
         <div class="facility-content">
           <h3>TBI Room</h3>
           <p>
@@ -487,7 +507,7 @@
           </div>
         </div>
 
-        
+
       </div>
     </div>
 

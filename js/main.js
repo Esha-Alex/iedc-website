@@ -23,7 +23,7 @@ navLinks.forEach((link) => {
 });
 
 // Theme Toggle Functionality
-const themeToggle = document.getElementById("themeToggle");
+const themeToggles = document.querySelectorAll(".theme-btn");
 const html = document.documentElement;
 
 // Initialize theme from localStorage or default to light
@@ -36,16 +36,22 @@ function initializeTheme() {
 function setTheme(theme) {
   html.setAttribute("data-theme", theme);
   localStorage.setItem("theme", theme);
+
+  // Trigger Vanta update whenever theme is set
+  // This handles initial load AND toggle switches
+  setTimeout(() => {
+    setVanta(theme);
+  }, 50);
 }
 
 // Toggle theme on button click
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
+themeToggles.forEach(btn => {
+  btn.addEventListener("click", () => {
     const currentTheme = html.getAttribute("data-theme") || "light";
     const newTheme = currentTheme === "light" ? "dark" : "light";
     setTheme(newTheme);
   });
-}
+});
 
 // Event Popup Functionality
 const eventPopup = document.getElementById("eventPopup");
@@ -114,7 +120,7 @@ const eventDatabase = {
       "MACEKART was a vibrant and engaging marketplace event conducted as part of Takshak'25 in collaboration with IEDC MACE. The event provided a platform for students to set up stalls and showcase their creativity through food, products, games, and innovative ideas. It transformed the campus into a lively entrepreneurial space where participants experienced real-time selling, customer interaction, and money management. MACEKART encouraged creativity, teamwork, and practical business exposure, allowing students to understand the dynamics of running a stall, promoting products, and engaging customers effectively.",
   },
   "marketing-101": {
-    image: "assets/events/Macekart.jpg",
+    image: "assets/events/marketing_101.png",
     title: "Marketing 101",
     date: "27th September 2025",
     time: "1:30 PM – 3:00 PM",
@@ -126,7 +132,7 @@ const eventDatabase = {
       "Marketing 101 was an interactive learning session organized by IEDC MACE in collaboration with CUSTOMIST, aimed at introducing students to the fundamentals of marketing, branding, and business growth strategies. The session covered real-world marketing concepts, practical approaches to selling ideas, and how startups position themselves in competitive markets. Participants gained insights into modern marketing trends, customer behavior, and strategic thinking directly from industry-oriented discussions. The event helped students build a strong foundation in marketing, improved their business awareness, and equipped them with skills useful for startups, internships, and entrepreneurial ventures.",
   },
   "techbiz-2": {
-    image: "assets/events/Macekart.jpg",
+    image: "assets/events/techbiz_2.png",
     title: "TECHBIZ 2.0",
     date: "28th September 2024",
     time: "9:00 AM – 4:00 PM",
@@ -140,7 +146,7 @@ const eventDatabase = {
       "TECHBIZ 2.0 was a flagship competition organized by IEDC MACE in association with Takshak'24, designed to test participants' technical knowledge and business decision-making skills. The event focused on problem-solving, innovation, and strategic thinking by blending technology with business concepts. Participants worked on real-world scenarios, analyzed challenges, and proposed innovative solutions. The competition enhanced critical thinking, teamwork, and entrepreneurial mindset among students, making it a valuable learning experience for aspiring technologists and entrepreneurs.",
   },
   "tech-traverse": {
-    image: "assets/events/Macekart.jpg",
+    image: "assets/events/tech_traverse.png",
     title: "Tech Traverse – Startup & Project Expo",
     date: "26th & 27th September 2025",
     time: "From 1:30 PM onwards",
@@ -166,7 +172,7 @@ function openEventPopup(eventId) {
       eventImage.style.display = "none";
     }
     document.getElementById("eventTitle").textContent = event.title;
-    
+
     // Build date string with optional time, venue, etc.
     let dateText = `📅 Date: ${event.date}`;
     if (event.time) dateText += `\n⏰ Time: ${event.time}`;
@@ -174,7 +180,7 @@ function openEventPopup(eventId) {
     if (event.prizePool) dateText += `\n💰 Prize Pool: ${event.prizePool}`;
     if (event.activityPoints) dateText += `\n🎯 Activity Points: ${event.activityPoints}`;
     if (event.registration) dateText += `\n📝 Registration: ${event.registration}`;
-    
+
     document.getElementById("eventDate").textContent = dateText;
     document.getElementById("eventDescription").textContent = event.description;
     document.getElementById("eventDetails").textContent = "About the Event:\n" + event.details;
@@ -300,26 +306,16 @@ function setVanta(theme) {
         scale: 1.0,
         scaleMobile: 1.0,
         backgroundColor: 0x0d1117,
-        color: 0xffd24a
+        color: 0xffd24a,
+        xOffset: -0.25
       });
     }
   }
 }
 
-// Update Vanta on theme toggle
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    // Wait for theme attribute to update
-    setTimeout(() => {
-      const currentTheme = html.getAttribute("data-theme") || "light";
-      setVanta(currentTheme);
-    }, 50);
-  });
-}
 
-// Initial Load
-const initialTheme = localStorage.getItem("theme") || "light";
-setVanta(initialTheme);
+
+
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
@@ -454,8 +450,8 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   // Intersection Observer for scroll-triggered animations
   const observerOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -100px 0px"
+    threshold: 0.05,
+    rootMargin: "0px 0px -50px 0px"
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -487,4 +483,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+});
+
+/* ============================
+   Preloader Logic
+============================ */
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader-wrapper");
+  if (!loader) return;
+
+  // Check if session has been visited
+  const hasVisited = sessionStorage.getItem("hasVisited");
+
+  if (hasVisited) {
+    // If visited, hide immediately (no delay)
+    loader.classList.add("loaded");
+    loader.style.transition = "none"; // Disable potential transition
+  } else {
+    // First visit: Show loader with reduced delay
+    setTimeout(() => {
+      loader.classList.add("loaded");
+      sessionStorage.setItem("hasVisited", "true");
+    }, 400); // 400ms delay
+  }
 });
